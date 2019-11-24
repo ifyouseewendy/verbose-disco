@@ -33,8 +33,8 @@ records = data.each_with_object([]) do |ha, ret|
 
   ret << {
     title: title,
-    start_date: labels.first.split(".").map(&:to_i) + [1],
-    end_date: labels.first.split(".").map(&:to_i) + [1],
+    start_date: Date.parse(labels.first + ".01").to_s.split("-").map(&:to_i),
+    end_date: Date.parse(labels.last + ".01").next_month.prev_day.to_s.split("-").map(&:to_i),
     url: url
   }
 end

@@ -1,0 +1,22 @@
+{
+  "name": "2019-whishlist",
+  "version": "1.0.0",
+  "description": "Get your person Github access token from \"Settings -> Developer settings -> Personal access tokens\".",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifyouseewendy/verbose-disco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifyouseewendy/verbose-disco/issues"
+  },
+  "homepage": "https://github.com/ifyouseewendy/verbose-disco#readme",
+  "dependencies": {
+    "frappe-gantt": "^0.3.0"
+  }
+}

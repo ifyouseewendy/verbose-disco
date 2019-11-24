@@ -1,0 +1,15 @@
+query {
+  repository(owner:"ifyouseewendy", name:"verbose-disco" ) {
+		issues(first: 50) {
+      nodes {
+        title
+        url
+        labels (first: 5) {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+}

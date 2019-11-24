@@ -21,7 +21,7 @@ function drawChart() {
   data.addColumn('number', 'Percent Complete');
   data.addColumn('string', 'Dependencies');
 
-  fetch("https://raw.githubusercontent.com/ifyouseewendy/verbose-disco/8388015fdcf1b04f6c852d1ed78966395bb1d5d7/data.json")
+  fetch("https://raw.githubusercontent.com/ifyouseewendy/verbose-disco/master/issues.json")
     .then(response => response.json())
     .then(function(issues) {
         issues.forEach(

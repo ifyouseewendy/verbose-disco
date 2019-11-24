@@ -23,9 +23,8 @@ if response.code != "200"
   exit 1
 end
 
-data = JSON.parse(response.body)["data"]["repository"]["issues"]["nodes"]
-
-records = data.each_with_object([]) do |ha, ret|
+nodes = JSON.parse(response.body)["data"]["repository"]["issues"]["nodes"]
+issues = nodes.each_with_object([]) do |ha, ret|
   labels = ha["labels"]["nodes"].map { |h| h["name"] }.sort
   next if labels.empty?
 
@@ -38,10 +37,11 @@ records = data.each_with_object([]) do |ha, ret|
     url: url
   }
 end
+issues = issues.sort_by { |h| Date.parse(h[:start_date].join(".")) }
 
 puts "--> Sample"
-puts records.first(3)
+puts issues.first(3)
 
-File.write("data.json", JSON.dump(records))
+File.write("issues.json", JSON.dump(issues))
 
-puts "--> Write to data.json"
+puts "--> Write to issues.json"

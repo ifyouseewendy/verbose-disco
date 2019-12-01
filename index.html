@@ -1,11 +1,50 @@
 <html>
 <head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="./node_modules/frappe-gantt/dist/frappe-gantt.min.js"></script>
+  <script type="text/javascript" src="./node_modules/frappe-gantt/dist/frappe-gantt.js"></script>
   <script type="text/javascript" src="./script.js"></script>
   <link rel="stylesheet" href="./node_modules/frappe-gantt/dist/frappe-gantt.css" type="text/css"/>
+
+  <style>
+    #gantt {
+      font-family: STXihei, "Microsoft YaHei", sans-serif;
+    }
+    #gantt .handle {
+      width: 0 !important;
+    }
+    #gantt .upper-text {
+      font-size: x-large;
+    }
+
+    .gantt-container .details-container {
+        background: #fff;
+        display: inline-block;
+        padding: 12px;
+        box-shadow: 0 0 4px;
+        border: 1px solid #ccc;
+    }
+    .gantt-container .details-container #detail-link {
+      text-decoration: none;
+    }
+    .gantt-container .details-container #detail-link:link {
+      color: #a3a3ff;
+    }
+    .gantt-container .details-container #detail-link:visited {
+      color: #8a8aff;
+    }
+
+    .gantt-container .popup-wrapper {
+      font-family: STXihei, "Microsoft YaHei", sans-serif;
+    }
+    .gantt-container .pointer {
+      visibility: hidden;
+    }
+    .gantt-container .popup-wrapper .title {
+      padding: 0 0 10px 0;
+      text-align: center;
+    }
+  </style>
+</head>
 <body>
-    <div id="chart_div"></div>
     <svg id="gantt"></svg>
 </body>
 

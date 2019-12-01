@@ -1,4 +1,4 @@
-fetch("https://raw.githubusercontent.com/ifyouseewendy/verbose-disco/8211128fc38bfadc158c8b336167b30289c6c5f8/issues.json")
+fetch("https://raw.githubusercontent.com/ifyouseewendy/verbose-disco/e4acedb7566935351286ec08c593873ccb31d50a/issues.json")
   .then(response => response.json())
   .then(function(issues) {
     var tasks = [];
@@ -14,17 +14,17 @@ fetch("https://raw.githubusercontent.com/ifyouseewendy/verbose-disco/8211128fc38
       });
     });
     var gantt = new Gantt("#gantt", tasks, {
+      view_mode: "Month",
       custom_popup_html: function(task) {
         // the task object will contain the updated
         // dates and progress value
         return `
-          <div class="title">${task.name}</div>
-          <div class="subtitle">
+          <div class="details-container">
+            <div class="title">${task.name}</div>
             <p>${task.start} - ${task.end}</p>
-            <p><a href="${task.url}" target="_blank">Detail</a></p>
+            <p><a href="${task.url}" target="_blank" id="detail-link">Detail</a></p>
           </div>
         `;
       }
     });
-    gantt.change_view_mode('Month');
   })

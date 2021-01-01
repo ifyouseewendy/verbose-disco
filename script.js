@@ -1,4 +1,4 @@
-fetch("https://raw.githubusercontent.com/ifyouseewendy/verbose-disco/master/issues.json")
+fetch("./issues.json")
   .then(response => response.json())
   .then(function(issues) {
     var tasks = [];

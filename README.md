@@ -11,9 +11,11 @@ ruby get.rb
 
 Render
 
-* Update script.js to `fetch("./issues.json")`
-* Init a local server by `ruby -run -e httpd . -p 5000`
-* Visit localhost:5000
+```sh
+ruby -run -e httpd . -p 5000
+
+# visit localhost:5000
+```
 
 Ref
 

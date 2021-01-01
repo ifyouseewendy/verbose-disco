@@ -1,6 +1,6 @@
 query {
   repository(owner:"ifyouseewendy", name:"verbose-disco" ) {
-		issues(first: 50) {
+		issues(first: 50, states: CLOSED) {
       nodes {
         title
         url
